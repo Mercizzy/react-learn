@@ -33,6 +33,27 @@ const routes = [
         path: '/context',
         component: lazy(()=> import("./components/context/Parent"))
       },
+      {
+        id: "1-4",
+        title: "forwardRef",
+        to: '/forwardRef',
+        path: '/forwardRef',
+        component: lazy(()=> import("./components/ref转发"))
+      },
+      {
+        id: "1-5",
+        title: "hoc",
+        to: '/hoc',
+        path: '/hoc',
+        component: lazy(()=> import("./components/Hoc/Parent"))
+      },
+      {
+        id: "1-6",
+        title: "弹窗",
+        to: '/dialog',
+        path: '/dialog',
+        component: lazy(()=> import("./components/Protals/dialog"))
+      },
     ],
   },
 ]
@@ -55,7 +76,7 @@ class App extends Component {
 
   render() { 
     return (
-      <div className="App">
+      <div className="App" id="App">
         <div className="leftNav">
           <Menu
             mode="inline"

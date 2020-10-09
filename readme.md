@@ -271,5 +271,32 @@ npm start
   	4.服务端渲染
   ```
 
++ context
+
+  ```jsx
+  // createContext创建一个context
+  const ColorContext = React.createContext({
+    background: '',
+    changeColor: ()=> {}
+  })
+  
+  // 在需要使用context的组件的父级处使用Provider初始化
+  <ColorContext.Provider value={ this.state }>
+    <Child1 />
+    <Child2 />
+  </ColorContext.Provider>
+    
+  // 在子组件处使用Consumer
+    <ColorContext.Consumer>
+      {
+        ({background})=> (
+          <div style={ { background } }>
+            <p style={ style }>context颜色</p>
+          </div>
+        )
+      }
+    </ColorContext.Consumer>
+  ```
+
   
 
